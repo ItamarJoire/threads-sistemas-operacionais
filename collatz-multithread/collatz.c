@@ -5,6 +5,7 @@
  
 #define NUM_THREADS 1
  
+// Thread que faz o cálculo de collatz  
 void *threadBody (void *id){
     int tid = (long) id;
     
@@ -27,17 +28,17 @@ void *threadBody (void *id){
 }
    
 int main (int argc, char *argv[]){
-  pthread_t thread [NUM_THREADS] ;
+  pthread_t thread [NUM_THREADS]; // Vetor de threads
   pthread_attr_t attr;
 
   pthread_attr_init (&attr);
   pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE); // As threads usarão a flag attr.
-
+  
   long i, status ;
   printf("Qual o valor: ");
   scanf("%ld", &i);
 
-  printf ("Main: criando uma thread para o cálculo de Collatz\n");
+  printf ("Main: criando uma thread que faz o cálculo de Collatz e o mostra em tela.\n");
 
   status = pthread_create (&thread[i], &attr, threadBody, (void *) i) ;
   if (status){
