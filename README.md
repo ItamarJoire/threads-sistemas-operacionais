@@ -11,7 +11,11 @@
  &nbsp;
 
 Para rodar um dos códigos abra o terminal do Linux, entre no diretório do código e execute:
-* `gcc arquivo.c -o arquivo -lpthread`
+* `make`
 * `./arquivo`
+
+Depois de usar e quiser limpar os arquivos:
+
+* `make clean`
 
 
