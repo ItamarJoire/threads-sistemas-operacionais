@@ -52,7 +52,7 @@ void *threadBox (void *id){
 }
 
 void *threadRow (void *id){
-    int row = (int) id;
+    long row = (long) id;
     int numeros[9] = {0};
     results[row+9] = 1;
     //printf("Analyzing row number %d\n", row +1);
@@ -70,7 +70,7 @@ void *threadRow (void *id){
 }
 
 void *threadCol (void *id){
-    int col = (int) id;
+    long col = (long) id;
     int numeros[9] = {0};
     //printf("Analyzing col number %d\n", col +1);
     int i;
@@ -97,7 +97,7 @@ int main (int argc, char *argv[]){
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate (&attr, PTHREAD_CREATE_JOINABLE);
 
-    int i = 0;
+    long i = 0;
     int rowBox;
     int colBox;
     for (i = 0; i < 9; i++) {
@@ -132,11 +132,11 @@ int main (int argc, char *argv[]){
         if (results[i] == 0) {
             error = 0;
             if (i < 9) {
-                printf("Error on box number %d\n", i+1);
+                printf("Error on box number %ld\n", i+1);
             } else if (i < 18) {
-                printf("Error on row %d\n", i-8);
+                printf("Error on row %ld\n", i-8);
             } else {
-                printf("Error on collumn %d\n", i-17);
+                printf("Error on collumn %ld\n", i-17);
             }
         }
     }
