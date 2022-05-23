@@ -125,6 +125,9 @@ int main (int argc, char *argv[]){
     int error = 1;
     for (i = 0; i < 27; i++) {
         status = pthread_join(thread[i], NULL);
+        if (i < 9) {
+            free(data[i]);
+        }
         if(status){
             perror("pthread_join");
             exit(1);
