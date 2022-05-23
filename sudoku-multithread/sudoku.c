@@ -45,7 +45,7 @@ void *threadBox (void *id){
         printf("Number on row: %d, col: %d is : %d, numbers on: %d\n", box->row + i/3 +1, box->column + i%3 +1, sudoku[box->row + i/3][box->column + i%3], numeros[sudoku[box->row + i/3][box->column + i%3]-1]);
         #endif
          if (numeros[sudoku[box->row + i/3][box->column + i%3]-1] || sudoku[box->row + i/3][box->column + i%3] < 1 || sudoku[box->row + i/3][box->column + i%3] > 9) {
-             //results[boxNum] = 0;
+             results[boxNum] = 0;
          } else {
              numeros[sudoku[box->row + i/3][box->column + i%3]-1]++;
          }
