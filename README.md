@@ -6,7 +6,7 @@
 
 #### Ambiente de implementação
 * Sistema operacional Linux (sugestão: Xubuntu 18.04+)
-* Compilador C padrão C99 (compilar /usr/bin/gcc, usando opção –std=c99 -Wall -ltr);
+* Compilador C padrão C99 (compilar /usr/bin/gcc, usando opção –std=c99 -Wall -ltr)
 
  &nbsp;
 
